@@ -1,5 +1,12 @@
-// first of all you need to create three things (scene, camera, renderer)
+/***
+ * you can install theree.js by using npm
+ * type following command in your terminal of your file where you want to make three.js project
+ * npm install three
+ * in your js file import THREE from 'three' by following
+ * import * as THREE from 'three' or import { Scene } from 'three'
+ */
 
+// first of all you need to create three things (scene, camera, renderer)
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(
   75,
@@ -13,7 +20,9 @@ renderer.setSize(window.innerWidth, window.innerHeight); // make renderer size b
 document.body.appendChild(renderer.domElement); // append renderer to the body of the document
 
 var geometry = new THREE.BoxGeometry(1, 1, 1); // if you want to create cube, make geometry by using BoxGeometry() and coordinates
-var material = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // create color of the material by using MeshBasicMaterial()
+var material = new THREE.MeshBasicMaterial({
+  color: 0xff0000,
+}); // create properties of the material you make above by using MeshBasicMaterial()
 var cube = new THREE.Mesh(geometry, material); // combining geometry and material by using Mesh()
 scene.add(cube); // add cube to the scene
 
